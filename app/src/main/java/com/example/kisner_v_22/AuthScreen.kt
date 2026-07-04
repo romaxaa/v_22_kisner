@@ -26,6 +26,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.kisner_v_22.ui.theme.AppRed
 
+/**
+ * AuthScreen provides the user authentication interface.
+ * It contains input fields for username and password with a custom eye icon visibility toggle,
+ * and registration and authorization buttons.
+ *
+ * @param onNavigateToProfile Callback invoked when the user successfully authenticates.
+ */
 @Composable
 fun AuthScreen(
     onNavigateToProfile: () -> Unit

@@ -33,6 +33,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.kisner_v_22.ui.theme.AppRed
 
+/**
+ * ProfileScreen displays the user profile details.
+ * It contains the user avatar, greeting, an articles list feed,
+ * and actions like navigating to settings, map, or dialing a phone number.
+ *
+ * @param onNavigateToSettings Callback to open Settings.
+ * @param onNavigateToMap Callback to open Map view.
+ * @param onLogout Callback to log out the user.
+ */
 @Composable
 fun ProfileScreen(
     onNavigateToSettings: () -> Unit,
