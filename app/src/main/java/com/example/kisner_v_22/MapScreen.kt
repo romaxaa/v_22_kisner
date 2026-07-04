@@ -45,38 +45,20 @@ fun MapScreen(
             contentScale = ContentScale.Crop
         )
 
-        // Custom Title overlay at the top (Mockup: Системное приложение - Карта)
-        Column(
+        // Back button
+        IconButton(
+            onClick = onNavigateBack,
             modifier = Modifier
-                .fillMaxWidth()
                 .padding(24.dp)
                 .align(Alignment.TopStart)
+                .size(48.dp)
+                .background(Color.White, shape = CircleShape)
         ) {
-            Text(
-                text = "Системное приложение - Карта",
-                color = Color.DarkGray,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium,
-                modifier = Modifier
-                    .background(Color.White.copy(alpha = 0.8f), shape = RoundedCornerShape(4.dp))
-                    .padding(horizontal = 8.dp, vertical = 4.dp)
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "Back",
+                tint = AppRed
             )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Back button
-            IconButton(
-                onClick = onNavigateBack,
-                modifier = Modifier
-                    .size(48.dp)
-                    .background(Color.White, shape = CircleShape)
-            ) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "Back",
-                    tint = AppRed
-                )
-            }
         }
 
         // Location marker pin layout in the center
@@ -106,43 +88,6 @@ fun MapScreen(
                 }
             }
         }
-
-        // Overlay address card at the bottom
-        Card(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .fillMaxWidth()
-                .padding(horizontal = 24.dp, vertical = 48.dp)
-                .clickable {
-                    // Intent to open Google Maps or any other map provider
-                    val uri = Uri.parse("geo:$latitude,$longitude?q=$latitude,$longitude($address)")
-                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                    context.startActivity(intent)
-                },
-            shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.White),
-            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = address,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "Нажмите, чтобы открыть в Google / Яндекс Картах",
-                    fontSize = 12.sp,
-                    color = AppRed,
-                    fontWeight = FontWeight.Medium
-                )
-            }
-        }
     }
 }
+
