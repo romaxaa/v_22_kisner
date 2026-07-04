@@ -1,39 +1,28 @@
 package com.example.kisner_v_22
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.kisner_v_22.ui.theme.AppRed
+
 
 @Composable
 fun MapScreen(
     onNavigateBack: () -> Unit
 ) {
-    val context = LocalContext.current
-    val address = "Моховая улица, 9с9"
-    val latitude = 55.753218
-    val longitude = 37.610427
-
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
